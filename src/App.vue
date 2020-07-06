@@ -1,18 +1,20 @@
 <template>
 <div>
   <header>
+  <div class="header_content">
     <h1>Happy Space</h1>
     <nav>
       <a href="##">關於我們</a>
-      <a href="##">房型介紹</a>
+      <a href="#rooms_ul">房型介紹</a>
       <a href="##">訂房服務</a>
       <a href="##">優惠活動</a>
     </nav>
+    </div>
   </header>
   <main>
   <div class="banner"></div>
-  <div class="content">
-  <ul>
+  <div class="main_content">
+  <ul id="rooms_ul">
     <rooms v-for="item in rooms" :item="item"></rooms>
   </ul>
   </div>
@@ -38,7 +40,8 @@ export default{
          accept:"application/json",
       }
     }).then(result=>{
-      this.rooms =result.data.items
+      this.rooms =result.data.items;
+      console.log(result.data.items.description)
     })
   },
 }
@@ -46,13 +49,16 @@ export default{
 
 <style scoped>
 header{
+  background-color: #a5a58d;
+}
+header .header_content{
+  width:80%;
   display: flex;
   justify-content:space-between;
+  margin: auto;
   padding: 15px 0;
-  background-color: #ffffdc;
 }
 header h1{
-  width:100px;
   width:50px;
   font-size: 22px; 
   border-left:2px solid blue;
@@ -66,13 +72,23 @@ header nav a{
   text-decoration: none;
   color:black;
 }
+main {
+	background-color:	#2b2d42;
+}
 main .banner{
   width: 100%;
   height: 600px;
   background:url("https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1934&q=80") no-repeat 50% 75%;
 }
-main .content ul{
+main .main_content{
+  width:80%;
+  margin:auto;
+}
+main .main_content ul{
   display: flex;
   flex-wrap:wrap;
+  justify-content: space-between;
+  margin:0;
+  padding: 0;
 }
 </style>
