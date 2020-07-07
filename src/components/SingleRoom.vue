@@ -1,7 +1,7 @@
 <template>
-<div>
-  <header>
-  <div class="header_content">
+  <div>
+    <header>
+    <div class="header_content">
     <h1>Happy Space</h1>
     <nav>
       <a href="##">關於我們</a>
@@ -11,41 +11,43 @@
     </nav>
     </div>
   </header>
-  <main>
-  <div class="banner"></div>
-  <div class="main_content">
-  <ul id="rooms_ul">
-    <rooms v-for="item in rooms" :item="item"></rooms>
-  </ul>
-  </div>
+  <main>  
+    <div class="room_img">
+      <div class="img">
+      <img :src="room.imageUrl[2]">
+      </div>
+      <div class="another_img">
+        <img :src="room.imageUrl[0]">
+        <img :src="room.imageUrl[1]">
+      </div>
+    </div>
+    <div class="room_feature">
+    <h2>{{room.name}}</h2>
+    </div>
   </main>
-</div>
+  </div>
 </template>
 <script>
-import rooms from "@/components/Rooms.vue"
 export default{
-  name:"App",
-  components:{
-    rooms,
-  },
+  name:"singleRoom",
   data(){
     return{
-      rooms:"",
+      room:""
     }
   },
   mounted(){
-    this.axios("https://challenge.thef2e.com/api/thef2e2019/stage6/rooms",{
+    let id=this.$route.params.id;
+    this.axios(`https://challenge.thef2e.com/api/thef2e2019/stage6/room/${id}`,{
       headers:{
          Authorization : "Bearer 7mVLFDwXZ7vbrKGVDJcRr9qXCjUjM8ZvPfQorXSY9jVnzYyYInJj07mIv2QE",
          accept:"application/json",
       }
     }).then(result=>{
-      this.rooms =result.data.items;
+      this.room=result.data.room[0];
     })
   },
 }
 </script>
-
 <style scoped>
 header{
   background-color: #a5a58d;
@@ -71,23 +73,28 @@ header nav a{
   text-decoration: none;
   color:black;
 }
-main {
-	background-color:	#2b2d42;
-}
-main .banner{
-  width: 100%;
-  height: 600px;
-  background:url("https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1934&q=80") no-repeat 50% 75%;
-}
-main .main_content{
-  width:80%;
-  margin:auto;
-}
-main .main_content ul{
+main{
+  background-color:	#2b2d42;
   display: flex;
-  flex-wrap:wrap;
+  justify-content: space-around;  
+}
+main .room_img{
+  background-color: #fffffc;
+  padding:15px;
+}
+main .room_img .img img{
+  width: 500px;
+  height: 300px;
+}
+main .room_img .another_img{
+  display: flex;
   justify-content: space-between;
-  margin:0;
-  padding: 0;
+}
+main .room_img .another_img img{
+  width: 245px;
+  height: 150px;
+}
+main .room_feature h2{
+ color: yellow;
 }
 </style>
