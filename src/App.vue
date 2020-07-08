@@ -2,7 +2,7 @@
 <div>
   <header>
   <div class="header_content">
-    <h1>Happy Space</h1>
+    <h1><a href="##">Happy Space</a></h1>
     <nav>
       <a href="##">關於我們</a>
       <a href="#rooms_ul">房型介紹</a>
@@ -59,10 +59,15 @@ header .header_content{
 }
 header h1{
   width:50px;
-  font-size: 22px; 
   border-left:2px solid blue;
   padding-left: 20px;
   margin:0 0 0 10px;
+}
+header a{
+  text-decoration: none;
+  color: black;
+  font-size: 22px;
+  display: inline-block;
 }
 header nav a{
   font-size: 20px;

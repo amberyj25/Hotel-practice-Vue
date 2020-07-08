@@ -2,10 +2,12 @@
   <div>
     <header>
     <div class="header_content">
-    <h1>Happy Space</h1>
+    <h1>
+    <router-link :to="{name:`App`}">Happy Space</router-link>
+    </h1>
     <nav>
       <a href="##">關於我們</a>
-      <a href="#rooms_ul">房型介紹</a>
+      <a href="./App/#rooms_ul">房型介紹</a>
       <a href="##">訂房服務</a>
       <a href="##">優惠活動</a>
     </nav>
@@ -23,6 +25,11 @@
     </div>
     <div class="room_feature">
     <h2>{{room.name}}</h2>
+    <p>房客人數限制：{{room.descriptionShort.GuestMax}}</p>
+    <p>床型：{{room.descriptionShort.Bed[0]}}</p>
+     <p>CheckIn的時間 : {{room.checkInAndOut.checkInEarly}}</p>
+     <p>CheckOut的時間 : {{room.checkInAndOut.checkOut}} </p>
+     <p style="text-align: justify;">{{room.description}}</p>
     </div>
   </main>
   </div>
@@ -44,6 +51,7 @@ export default{
       }
     }).then(result=>{
       this.room=result.data.room[0];
+      console.log(this.room)
     })
   },
 }
@@ -61,10 +69,15 @@ header .header_content{
 }
 header h1{
   width:50px;
-  font-size: 22px; 
   border-left:2px solid blue;
   padding-left: 20px;
   margin:0 0 0 10px;
+}
+header a{
+  text-decoration: none;
+  color: black;
+  font-size: 22px;
+  display: inline-block;
 }
 header nav a{
   font-size: 20px;
@@ -77,6 +90,7 @@ main{
   background-color:	#2b2d42;
   display: flex;
   justify-content: space-around;  
+  padding: 50px 0;
 }
 main .room_img{
   background-color: #fffffc;
@@ -94,7 +108,15 @@ main .room_img .another_img img{
   width: 245px;
   height: 150px;
 }
+main .room_feature {
+  width:500px;
+}
 main .room_feature h2{
  color: yellow;
+ text-align: right;
+ font-size: 50px;
+}
+main .room_feature p{
+  color: white;
 }
 </style>
