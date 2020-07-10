@@ -4,7 +4,7 @@
   <div class="header_content">
     <h1><a href="##">Happy Space</a></h1>
     <nav>
-      <a href="##">關於我們</a>
+      <router-link to="/about">關於我們</router-link>
       <a href="#rooms_ul">房型介紹</a>
       <a href="##">訂房服務</a>
       <a href="##">優惠活動</a>
@@ -14,15 +14,15 @@
   <main>
   <div class="banner"></div>
   <div class="main_content">
-  <ul id="rooms_ul">
-    <rooms v-for="item in rooms" :item="item"></rooms>
-  </ul>
+    <ul id="rooms_ul">
+      <rooms v-for="item in rooms" :item="item"></rooms>
+    </ul>
   </div>
   </main>
 </div>
 </template>
 <script>
-import rooms from "@/components/Rooms.vue"
+import rooms from "@/components/rooms.vue"
 export default{
   name:"App",
   components:{
@@ -66,7 +66,7 @@ header h1{
 header a{
   text-decoration: none;
   color: black;
-  font-size: 22px;
+  font-size: 25px;
   display: inline-block;
 }
 header nav a{
@@ -85,14 +85,14 @@ main .banner{
   background:url("https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1934&q=80") no-repeat 50% 75%;
 }
 main .main_content{
-  width:80%;
-  margin:auto;
+  width:85%;
+  margin: auto;
 }
 main .main_content ul{
   display: flex;
   flex-wrap:wrap;
   justify-content: space-between;
-  margin:0;
-  padding: 0;
+  margin: 0;
+  padding: 5px 0;
 }
 </style>

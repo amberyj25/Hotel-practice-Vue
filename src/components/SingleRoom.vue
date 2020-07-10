@@ -6,7 +6,7 @@
     <router-link :to="{name:`App`}">Happy Space</router-link>
     </h1>
     <nav>
-      <a href="##">關於我們</a>
+      <router-link to="/about">關於我們</router-link>
       <a href="./App/#rooms_ul">房型介紹</a>
       <a href="##">訂房服務</a>
       <a href="##">優惠活動</a>
@@ -76,7 +76,7 @@ header h1{
 header a{
   text-decoration: none;
   color: black;
-  font-size: 22px;
+  font-size: 25px;
   display: inline-block;
 }
 header nav a{
@@ -97,26 +97,27 @@ main .room_img{
   padding:15px;
 }
 main .room_img .img img{
-  width: 500px;
-  height: 300px;
+  width: 580px;
+  height: 350px;
 }
 main .room_img .another_img{
   display: flex;
   justify-content: space-between;
 }
 main .room_img .another_img img{
-  width: 245px;
-  height: 150px;
+  width: 285px;
+  height: 215px;
 }
 main .room_feature {
-  width:500px;
+  width:525px;
+  padding: 25px;
 }
 main .room_feature h2{
  color: yellow;
- text-align: right;
  font-size: 50px;
 }
 main .room_feature p{
   color: white;
+  font-size: 20px;
 }
 </style>

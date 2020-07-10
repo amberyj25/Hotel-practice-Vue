@@ -13,7 +13,7 @@ export default{
   props:["item"],
   methods:{
     updateUrl(id){
-      this.$router.push(`/RoomsDetail/${id}`)
+      this.$router.push(`/SingleRoom/${id}`)
     }
   }
 }
@@ -21,7 +21,7 @@ export default{
 <style scoped>
 li{
   list-style: none;
-  margin-top: 25px;
+  margin: 12px;
   background-color: #fffffc;
   padding: 15px;
 }
