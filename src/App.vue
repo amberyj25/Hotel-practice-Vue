@@ -15,7 +15,7 @@
   <div class="banner"></div>
   <div class="main_content">
     <ul id="rooms_ul">
-      <Rooms v-for="item in rooms" :item="item"></Rooms>
+      <Rooms v-for="(item,key) in rooms" :item="item" :key="index"></Rooms>
     </ul>
   </div>
   </main>
