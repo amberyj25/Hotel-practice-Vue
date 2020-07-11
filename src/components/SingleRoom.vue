@@ -6,9 +6,9 @@
     <router-link :to="{name:`App`}">Happy Space</router-link>
     </h1>
     <nav>
-      <router-link to="/about">關於我們</router-link>
+      <router-link to="/About">關於我們</router-link>
       <router-link to="/">房型介紹</router-link>
-      <a href="##">優惠活動</a>
+      <router-link to="/Sale">優惠活動</router-link>
       <router-link to="/">首頁</router-link>
     </nav>
     </div>

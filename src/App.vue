@@ -4,9 +4,9 @@
   <div class="header_content">
     <h1><router-link to="/">Happy Space</router-link></h1>
     <nav>
-      <router-link to="/about">關於我們</router-link>
+      <router-link to="/About">關於我們</router-link>
       <a href="#rooms_ul">房型介紹</a>
-      <a href="##">優惠活動</a>
+      <router-link to="/Sale">優惠活動</router-link>
       <router-link to="/">首頁</router-link>
     </nav>
     </div>

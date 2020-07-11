@@ -6,30 +6,28 @@
     <router-link :to="{name:`App`}">Happy Space</router-link>
     </h1>
     <nav>
-      <a href="##">關於我們</a>
+      <router-link to="/About">關於我們</router-link>
       <router-link to="/">房型介紹</router-link>
-      <router-link to="/Sale">優惠活動</router-link>
+      <a href="##">優惠活動</a>
       <router-link to="/">首頁</router-link>
     </nav>
     </div>
   </header>
   <main>  
     <div class="room_img">
-      <img src="@/assets/aboutimg.jpg" alt="img">
+      <img src="@/assets/sale.jpg" alt="img">
     </div>
     <div class="aboutus">
-    <h2>About Us</h2>
-    <p>A wonderful vacation on dream.
-    The beach with the breeze, enjoying the sunset in summer, and bathing the stars at midnight.
-    What an amazing thing when you wake up in the morning with the view formed the sky, the mountains and the ocean in front of you. You can totally relax yourself with the bright and tidy room, the astonishing scene, and our sweet service.
-    Faraway from the noist city right now.</p>
+    <h2>Sale</h2>
+    <p>歡慶開幕</p>
+    <p>住一晚送一晚</p>
     </div>
   </main>
   </div>
 </template>
 <script>
 export default{
-  name:"about",
+  name:"Sale",
 }
 </script>
 <style scoped>
@@ -83,12 +81,16 @@ main .aboutus {
 main .aboutus h2{
  color: yellow;
  font-size: 50px;
+ text-align: center;
+ margin: 80px 0;
 }
 main .aboutus p{
   color: white;
   font-size: 20px;
   line-height: 45px;
-  text-align:justify;
+  text-align: center;
+  letter-spacing: 20px;
+   font-size: 50px;
 }
 </style>
 
