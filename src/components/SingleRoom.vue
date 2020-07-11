@@ -51,7 +51,6 @@ export default{
       }
     }).then(result=>{
       this.room=result.data.room[0];
-      console.log(this.room)
     })
   },
 }
