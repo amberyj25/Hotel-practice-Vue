@@ -10,6 +10,7 @@
 
 <script>
 export default{
+  name:"Rooms",
   props:["item"],
   methods:{
     updateUrl(id){

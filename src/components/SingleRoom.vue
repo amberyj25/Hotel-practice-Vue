@@ -7,9 +7,9 @@
     </h1>
     <nav>
       <router-link to="/about">關於我們</router-link>
-      <a href="./App/#rooms_ul">房型介紹</a>
-      <a href="##">訂房服務</a>
+      <router-link to="/">房型介紹</router-link>
       <a href="##">優惠活動</a>
+      <router-link to="/">首頁</router-link>
     </nav>
     </div>
   </header>

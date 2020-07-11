@@ -2,12 +2,12 @@
 <div>
   <header>
   <div class="header_content">
-    <h1><a href="##">Happy Space</a></h1>
+    <h1><router-link to="/">Happy Space</router-link></h1>
     <nav>
       <router-link to="/about">關於我們</router-link>
       <a href="#rooms_ul">房型介紹</a>
-      <a href="##">訂房服務</a>
       <a href="##">優惠活動</a>
+      <router-link to="/">首頁</router-link>
     </nav>
     </div>
   </header>
@@ -15,18 +15,18 @@
   <div class="banner"></div>
   <div class="main_content">
     <ul id="rooms_ul">
-      <rooms v-for="item in rooms" :item="item"></rooms>
+      <Rooms v-for="item in rooms" :item="item"></Rooms>
     </ul>
   </div>
   </main>
 </div>
 </template>
 <script>
-import rooms from "@/components/rooms.vue"
+import Rooms from "@/components/Rooms.vue"
 export default{
   name:"App",
   components:{
-    rooms,
+    Rooms,
   },
   data(){
     return{

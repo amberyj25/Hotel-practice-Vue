@@ -7,9 +7,9 @@
     </h1>
     <nav>
       <a href="##">關於我們</a>
-      <a href="./App/#rooms_ul">房型介紹</a>
-      <a href="##">訂房服務</a>
+      <router-link to="/">房型介紹</router-link>
       <a href="##">優惠活動</a>
+      <router-link to="/">首頁</router-link>
     </nav>
     </div>
   </header>
@@ -20,9 +20,9 @@
     <div class="aboutus">
     <h2>About Us</h2>
     <p>A wonderful vacation on dream.
-The beach with the breeze, enjoying the sunset in summer, and bathing the stars at midnight.
-What an amazing thing when you wake up in the morning with the view formed the sky, the mountains and the ocean in front of you. You can totally relax yourself with the bright and tidy room, the astonishing scene, and our sweet service.
-Faraway from the noist city right now.</p>
+    The beach with the breeze, enjoying the sunset in summer, and bathing the stars at midnight.
+    What an amazing thing when you wake up in the morning with the view formed the sky, the mountains and the ocean in front of you. You can totally relax yourself with the bright and tidy room, the astonishing scene, and our sweet service.
+    Faraway from the noist city right now.</p>
     </div>
   </main>
   </div>
