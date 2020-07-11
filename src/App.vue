@@ -82,7 +82,7 @@ main {
 main .banner{
   width: 100%;
   height: 600px;
-  background:url("https://images.unsplash.com/photo-1501876725168-00c445821c9e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80") no-repeat 25% 38%;
+  background:url("https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1934&q=80") no-repeat 25% 38%;
   background-size: cover;
 }
 main .main_content{

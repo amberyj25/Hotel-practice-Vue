@@ -1,9 +1,9 @@
 <template>
     <li>
-     <a href="##" @click.prevent="updateUrl(item.id)">
+     <a href="##" @click.prevent="updateUrl(item.id)" class="li_img">
         <img :src="item.imageUrl">
       </a>
-      <a href="##" @click.prevent="updateUrl(item.id)">{{item.name}}</a>
+      <a href="##" @click.prevent="updateUrl(item.id)" class="li_text">{{item.name}}</a>
       <p>平日：{{item.normalDayPrice}}元 / 假日：{{item.holidayPrice}}元</p>
     </li>
 </template>
@@ -30,13 +30,16 @@ li img{
   width: 350px;
   height: 250px;
 }
-li a{
+li .li_text{
   display: block;
   text-decoration: none;
   color: black;
   font-size: 20px;
 }
-li a:hover{
+li .li_text:hover{
   color: blue;
+}
+li .li_img:hover{
+  opacity: 0.5;
 }
 </style>
