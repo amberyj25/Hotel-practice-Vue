@@ -63,7 +63,7 @@ header h1{
   padding-left: 20px;
   margin:0 0 0 10px;
 }
-header a{
+header h1 a{
   text-decoration: none;
   color: black;
   font-size: 25px;
@@ -75,6 +75,9 @@ header nav a{
   padding:20px 35px;
   text-decoration: none;
   color:black;
+}
+header nav a:hover{
+  color: blue;
 }
 main {
 	background-color:	#2b2d42;
