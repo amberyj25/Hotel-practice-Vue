@@ -44,6 +44,7 @@ li .li_inner{
   bottom:0;
   width: 350px;
   height: 80px;
+  transition: all 0.5s;
 }
 li .li_inner:hover{
   height: 120px;
@@ -53,6 +54,7 @@ li .li_inner .more{
   width:100%;
   height: 20px;
   bottom: -21px;
+  transition: all 1s;
 } 
 li .li_inner:hover .more{
   bottom: 15px;
