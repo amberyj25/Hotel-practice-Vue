@@ -40,6 +40,6 @@ li .li_text:hover{
   color: blue;
 }
 li .li_img:hover{
-  opacity: 0.5;
+  opacity: 0.8;
 }
 </style>

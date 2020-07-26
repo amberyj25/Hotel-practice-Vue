@@ -12,7 +12,9 @@
     </div>
   </header>
   <main>
-  <div class="banner"></div>
+  <div class="banner">
+    <div class="img"></div>
+  </div>
   <div class="main_content">
     <ul id="rooms_ul">
       <Rooms v-for="(item,key) in rooms" :item="item" :key="index"></Rooms>
@@ -85,8 +87,19 @@ main {
 main .banner{
   width: 100%;
   height: 600px;
-  background:url("https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1934&q=80") no-repeat 25% 38%;
+  overflow: hidden;
+  position: relative;
+}
+main .banner .img{
+  width: 100%;
+  height: 100%;
+  background:url("https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1934&q=80") no-repeat 28% 78%;
   background-size: cover;
+  position: absolute;
+  transition: transform 1.5s;
+}
+main .banner .img:hover{
+  transform: scale(1.15);
 }
 main .main_content{
   width:85%;
