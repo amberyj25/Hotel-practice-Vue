@@ -96,10 +96,10 @@ main .banner .img{
   background:url("https://images.unsplash.com/photo-1533759413974-9e15f3b745ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1934&q=80") no-repeat 28% 78%;
   background-size: cover;
   position: absolute;
-  transition: transform 1.5s;
+  transition: transform 1s;
 }
 main .banner .img:hover{
-  transform: scale(1.15);
+  transform: scale(1.2);
 }
 main .main_content{
   width:85%;
