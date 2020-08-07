@@ -7,7 +7,7 @@
       <router-link to="/About">關於我們</router-link>
       <a href="#rooms_ul">房型介紹</a>
       <router-link to="/Sale">優惠活動</router-link>
-      <router-link to="/">首頁</router-link>
+      <router-link to="/Login">會員登入</router-link>
     </nav>
     </div>
   </header>
@@ -36,7 +36,7 @@ export default{
     }
   },
   mounted(){
-    this.axios("https://challenge.thef2e.com/api/thef2e2019/stage6/rooms",{
+    this.axios.get("https://challenge.thef2e.com/api/thef2e2019/stage6/rooms",{
       headers:{
          Authorization : "Bearer 7mVLFDwXZ7vbrKGVDJcRr9qXCjUjM8ZvPfQorXSY9jVnzYyYInJj07mIv2QE",
          accept:"application/json",

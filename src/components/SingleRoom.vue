@@ -10,6 +10,7 @@
       <router-link to="/">房型介紹</router-link>
       <router-link to="/Sale">優惠活動</router-link>
       <router-link to="/">首頁</router-link>
+      <router-link to="/Login">會員登入</router-link>
     </nav>
     </div>
   </header>

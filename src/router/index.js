@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import App from "@/App.vue"
 import About from "@/components/About.vue"
 import Sale from "@/components/Sale.vue"
+import Login from "@/components/Login.vue"
 import SingleRoom from "@/components/SingleRoom.vue"
 
 Vue.use(VueRouter)
@@ -21,6 +22,10 @@ export default new VueRouter({
       path: "/Sale",
       name: "Sale",
       component: Sale,
+    }, {
+      path: "/Login",
+      name: "Login",
+      component: Login
     }, {
       path: "/SingleRoom/:id",
       name: "SingleRoom",
