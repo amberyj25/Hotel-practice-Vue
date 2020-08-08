@@ -1,24 +1,30 @@
 <template>
 <div class="form_outer">
-  <form v-if="changeComponent == false">
+  <form v-if="changeComponent == `form`">
     <div class="form_inner">
       <div> 
         <label for="email">登入信箱 ： </label>
         <input type="text" id="email" placeholder="請輸入登入信箱" v-model="user.username">
       </div>
       <div> 
-      <label for="password">密碼 : </label>
-      <input type="password" id="password" placeholder="請輸入密碼" v-model="user.password">
+        <label for="password">密碼 : </label>
+        <input type="password" id="password" placeholder="請輸入密碼" v-model="user.password">
       </div>
       <div>
-      <button @click="signin">登入</button>
-      <p>{{notSuccess}}</p>
+        <button type="submit" @click.prevent="signin">登入</button>
+        <p>{{notSuccess}}</p>
       </div>
     </div>
   </form>
-  <div class="result inner" v-else>
-  <h2>恭喜您成功登入</h2>
-  <button @click="toAppPage">回首頁</button>
+  <div class="result inner" v-else-if="changeComponent == `result`">
+    <h2>恭喜您成功登入</h2>
+    <button @click="toStart" class="btnResult">回首頁</button>
+    <p class="pResult">or</p>
+    <button @click="toSignout" class="btnResult">登出</button>
+  </div>
+  <div class="result loginout" v-else>
+    <h2>已成功登出</h2>
+    <button @click="toStart" class="btnResult">回首頁</button>
   </div>
 </div>
 </template>
@@ -32,7 +38,7 @@ export default{
         username:"",
         password:"",
       },
-      changeComponent: false,
+      changeComponent: "form",
       answer:"",
       notSuccess:"",
     }
@@ -40,19 +46,25 @@ export default{
   methods:{
     signin(){
       const vm = this;
-      this.axios.post("https://vue-course-api.hexschool.io/admin/signin",vm.user).then((result)=>{
+      vm.axios.post("https://vue-course-api.hexschool.io/signin",vm.user).then((result)=>{
         console.log(result.data.success);
         if(result.data.success == true){
-          vm.changeComponent = true;
+          vm.changeComponent = "result";
           vm.answer = "恭喜您成功登入";
         } else if(result.data.success == false) {
           vm.notSuccess = "沒有登入成功";
         }
       })
     },
-    toAppPage(){
+    toSignout(){
       const vm = this;
-      this.$router.push("/")
+      vm.axios.post("https://vue-course-api.hexschool.io/logout").then((result)=>{
+        this.changeComponent="";
+      })
+    },
+    toStart(){
+      const vm = this;
+      this.$router.push("/");
     }
   }
 }
@@ -78,7 +90,7 @@ form,.result{
   justify-content: center;
   box-shadow: 2px 2px 8px black;
 }
-.result.inner{
+.result.inner,.result.loginout{
   flex-direction:column;
   align-items: center;
 }
@@ -112,5 +124,13 @@ p{
 h2{
   width:100%;
   text-align: center;
+}
+button.btnResult{
+  width: 150px;
+  height: 35px;
+  margin: 0;
+}
+p.pResult{
+  margin:10px;
 }
 </style>
