@@ -1,6 +1,7 @@
 <template>
 <div>
   <header>
+  <loading :active.sync="isLoading"></loading>
   <div class="header_content">
     <h1><router-link to="/">Happy Space</router-link></h1>
     <nav>
@@ -33,9 +34,11 @@ export default{
   data(){
     return{
       rooms:"",
+      isLoading: false,
     }
   },
   mounted(){
+    this.isLoading = true;
     this.axios.get("https://challenge.thef2e.com/api/thef2e2019/stage6/rooms",{
       headers:{
          Authorization : "Bearer 7mVLFDwXZ7vbrKGVDJcRr9qXCjUjM8ZvPfQorXSY9jVnzYyYInJj07mIv2QE",
@@ -43,6 +46,7 @@ export default{
       }
     }).then(result=>{
       this.rooms =result.data.items;
+      this.isLoading = false;
     })
   },
 }

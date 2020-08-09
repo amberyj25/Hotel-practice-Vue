@@ -4,9 +4,13 @@ import Vue from 'vue'
 import router from './router/index.js'
 import axios from "axios"
 import VueAxios from "vue-axios"
+import Loading from 'vue-loading-overlay';
+import 'vue-loading-overlay/dist/vue-loading.css';
 
 Vue.use(VueAxios, axios);
 Vue.config.productionTip = false;
+
+Vue.component("Loading", Loading);;
 
 /* eslint-disable no-new */
 new Vue({

@@ -1,5 +1,6 @@
 <template>
-<div class="form_outer">
+  <div class="form_outer">
+  <loading :active.sync="isLoading"></loading>
   <form v-if="changeComponent == `form`">
     <div class="form_inner">
       <div> 
@@ -41,16 +42,19 @@ export default{
       changeComponent: "form",
       answer:"",
       notSuccess:"",
+      isLoading:false,
     }
   },
   methods:{
     signin(){
       const vm = this;
+      vm.isLoading = true;
       vm.axios.post("https://vue-course-api.hexschool.io/signin",vm.user).then((result)=>{
         console.log(result.data.success);
         if(result.data.success == true){
           vm.changeComponent = "result";
           vm.answer = "恭喜您成功登入";
+          vm.isLoading = false;
         } else if(result.data.success == false) {
           vm.notSuccess = "沒有登入成功";
         }
@@ -59,7 +63,8 @@ export default{
     toSignout(){
       const vm = this;
       vm.axios.post("https://vue-course-api.hexschool.io/logout").then((result)=>{
-        this.changeComponent="";
+        vm.changeComponent="";
+        vm.isLoading = false;
       })
     },
     toStart(){
