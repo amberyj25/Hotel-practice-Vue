@@ -41,7 +41,7 @@ export default{
     this.isLoading = true;
     this.axios.get("https://challenge.thef2e.com/api/thef2e2019/stage6/rooms",{
       headers:{
-         Authorization : "Bearer 7mVLFDwXZ7vbrKGVDJcRr9qXCjUjM8ZvPfQorXSY9jVnzYyYInJj07mIv2QE",
+         Authorization : "Bearer gXEmeg7d3PR517E9MXk9ApnsGVmHliQY1geCc0YbQMNTcsRvjEcDSf5RDSDd",
          accept:"application/json",
       }
     }).then(result=>{
@@ -112,7 +112,7 @@ main .main_content{
 main .main_content ul{
   display: flex;
   flex-wrap:wrap;
-  justify-content: space-between;
+  justify-content: center;
   margin: 0;
   padding: 5px 0;
 }
