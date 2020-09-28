@@ -45,9 +45,9 @@ export default{
   },
   mounted(){
     let id=this.$route.params.id;
-    this.axios(`https://challenge.thef2e.com/api/thef2e2019/stage6/room/${id}`,{
+    this.axios.get(`https://challenge.thef2e.com/api/thef2e2019/stage6/room/${id}`,{
       headers:{
-         Authorization : "Bearer 7mVLFDwXZ7vbrKGVDJcRr9qXCjUjM8ZvPfQorXSY9jVnzYyYInJj07mIv2QE",
+         Authorization : "Bearer gXEmeg7d3PR517E9MXk9ApnsGVmHliQY1geCc0YbQMNTcsRvjEcDSf5RDSDd",
          accept:"application/json",
       }
     }).then(result=>{
